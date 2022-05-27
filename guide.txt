@@ -1,0 +1,2 @@
+chức năng thêm vào giỏ hàng: khi click vào mua hàng thì sản phẩm sẽ vào giỏ hàng. Muốn xem giỏ hàng phải bấm vào giỏ hàng để xem.
+Trong phần giỏ hàng bấm vào cart food để xem chi tiết đơn hàng, mỗi phần xóa sản phẩm trong giỏ hàng phải reset lại giỏ hàng.

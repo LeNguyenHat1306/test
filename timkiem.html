@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+</head>
+<style>
+    
+    header {
+        grid-area: header-cell;
+        margin-bottom: 2px;
+        padding: 0 5px;
+        height: 100px;
+        background-image: url(images/header.png);
+    }
+    body {
+        min-width: 1024px;
+
+        margin: 0, auto;
+        font: 1.2em Arial, Helvetica, sans-serif;
+        display: grid;
+        grid-template-areas:
+            "header-cell"
+            "nav-cell"
+            "main-cell"
+            "footer-cell";
+    }
+
+    main,
+    header {
+        border: 1px solid #ccc7c8;
+        background-color: #fff;
+        border-radius: 5px;
+
+
+    }
+
+    header {
+        grid-area: header-cell;
+    }
+
+    #header {
+        grid-area: header-cell;
+        margin-bottom: 2px;
+        padding: 0 5px;
+        height: 100px;
+        background-image: url(images/header.png);
+    }
+
+    #header-img1 {
+        height: 80px;
+        position: absolute;
+        top: -5px;
+        animation: img1 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img1 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 30%;
+        }
+    }
+
+    #header-img2 {
+        height: 80px;
+        position: absolute;
+        top: -5px;
+        animation: img2 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img2 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 45%;
+        }
+    }
+
+    #header-img3 {
+        height: 80px;
+        position: absolute;
+        top: 0;
+        animation: img3 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img3 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 63%;
+        }
+    }
+
+    #menu {
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid;
+        padding: 5px;
+        background-color: lightgray;
+        color: lightcoral;
+        font-weight: bolder;
+    }
+
+    #img {
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid;
+        padding: 5px;
+        color: lightcoral;
+    }
+
+    #top {
+        width: 50px;
+        text-align: center;
+
+
+    }
+
+    div {
+        text-align: center;
+    }
+
+
+
+    input {
+        display: inline-block;
+        text-decoration: none;
+        border: 2px solid black;
+        padding: 5px;
+        font-weight: bolder;
+    }
+
+    #icon {
+
+        width: 30px;
+        height: 25px;
+        background-color: chartreuse;
+        text-align: center;
+    }
+
+   
+    h1 {
+        color: #ed4190;
+        text-align: center;
+    }
+     * {
+  box-sizing: border-box;
+}
+.container {
+  width: 500px;
+  margin: auto;
+}
+ 
+#myInput {
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+ 
+#myUL {
+  list-style-type: none;
+ 
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+ 
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; 
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+ 
+#myUL li a.header {
+  background-color: #e2e2e2;
+  cursor: default;
+}
+ 
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+
+<body>
+    <header>
+        <img src="images/logo.png">
+        <img id="header-img1" src="images/header-img1.png" alt="">
+        <img id="header-img2" src="images/header-img2.png" alt="">
+        <img id="header-img3" src="images/header-img3.png" alt="">
+        <p>
+            <a id="menu" href="trangchu.html">Trang Chủ</a>
+            <a id="menu" href="gioithieu.html">Giới thiệu</a>
+            <a id="menu" href="sanpham.html">Sản phẩm</a>
+            <a id="menu" href="tintuc.html">Tin tức</a>
+            <a id="menu" href="dangnhap.html">Đăng nhập</a>
+            <a id="menu" href="dangki.html">Đăng ký</a>
+            <a id="menu" href="lienhe.html">Liên hệ</a>
+            
+                 <!--input id="myInput" type="text" placeholder="Search for name" title=" Type in a name of products"><i id="icon" class=" fas fa-search"></i>
+            <a href="#"></a><i id="icon" class="fab fa-shopping-basket"></i-->
+            
+            <img width="30" src="images/search.png"><img width="30" src="images/trolley.png">
+        </p>
+
+
+
+
+    </header>
+    <main>
+        <div class="container">
+          
+           <div>
+                <input type="text" id="myInput" placeholder="Search for name.." title="Type in a name of Products">
+           
+           </div>
+           
+            <ul id="myUL">
+              <li><a href="sanpham.html">blackberry</a></li>
+              <li><a href="sanpham.html">blueberry</a></li>
+              <li><a href="sanpham.html">cantaloupe</a></li>
+              <li><a href="sanpham.html">grapes</a></li>
+              <li><a href="sanpham.html">green-apple</a></li>
+              <li><a href="sanpham.html">kiwi</a></li>
+              <li><a href="sanpham.html">mango</a></li>
+              <li><a href="sanpham.html">pineapple</a></li>
+              <li><a href="sanpham.html">strawberry</a></li>
+              
+            </ul>
+          </div>
+       
+    <script>
+        // lấy thẻ input
+        var input = document.getElementById("myInput");
+        // định nghĩa hàm xử lý myFunction
+        function myFunction() {
+            var filter, ul, li, a, i;
+            // lấy giá trị người dùng nhập
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            // Nếu filter không có giá trị thị ẩn phần kết quare\
+            if (!filter) {
+              ul.style.display = "none";
+            }else{
+              // lặp qua tất cả các thẻ li chứa kết quả
+              for (i = 0; i < li.length; i++) {
+                  // lấy thẻ a trong các thẻ li
+                  a = li[i].getElementsByTagName("a")[0];
+                  // kiểm tra giá trị nhập có tôn tại trong nội dung thẻ a
+                  if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    //nếu có hiển thị phàn tử ul và các thẻ li đó
+                      ul.style.display = "block";
+                      li[i].style.display = "";
+                  } else {
+                    // nếu không ẩn các thẻ li
+                      li[i].style.display = "none";
+       
+                  }
+              }
+            }
+        }
+        //gán sự kiện cho thẻ input
+        input.addEventListener("keyup", myFunction);
+      </script>
+    </main>
+    <footer>
+        <div id="footer">&copy; 2021 Bản quyền thuộc về FreezeVN. <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-amazon"></i></a>
+            <img id="top" src="images/top.png">
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font/fontawesome-free-5.15.4-web/css/all.css">
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <title>Sản phẩm</title>
+</head>
+<style>
+     #header {
+        grid-area: header-cell;
+        margin-bottom: 2px;
+        padding: 0 5px;
+        height: 100px;
+        background-image: url(images/header.png);
+    }
+    #header-img1 {
+        height: 80px;
+        position: absolute;
+        top: -5px;
+        animation: img1 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img1 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 30%;
+        }
+    }
+
+    #header-img2 {
+        height: 80px;
+        position: absolute;
+        top: -5px;
+        animation: img2 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img2 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 45%;
+        }
+    }
+
+    #header-img3 {
+        height: 80px;
+        position: absolute;
+        top: 0;
+        animation: img3 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img3 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 63%;
+        }
+    }
+    #nav ul li {
+
+display: inline-block;
+}
+
+ul {
+padding-left: 0px;
+}
+
+#logo-main {
+width: 15%;
+}
+</style>
+
+<body>
+    <div id="header">
+        <img src="images/logo.png">
+        <img id="header-img1" src="images/header-img1.png" alt="">
+        <img id="header-img2" src="images/header-img2.png" alt="">
+        <img id="header-img3" src="images/header-img3.png" alt="">
+        <nav id="nav">
+            <ul>
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Đăng nhập</a></li>
+                <li><a href="#">Đăng ký</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <div id="search">
+                    <input id="contentSearch" type="text" placeholder="Nhập nội dung cần tìm">
+                    <i class="fas fa-search icon-search" onclick="search()"></i>
+                   <a href="timkiem.html"></a> <i class="fas fa-shopping-cart icon-cart"></i>
+                </div>
+
+            </ul>
+        </nav>
+       
+    </div>
+
+
+    <article class="sanpham">
+
+        <h1>SẢN PHẨM TRUYỀN THỐNG</h1>
+
+        <div class="productOrigin">
+            <!--Sản phẩm 1-->
+            <section id=sp1>
+                <div>
+
+
+                    <img src="images/sanpham/blackberry.jpg" alt="Sữa chua kiwi" class="img-sptt">
+                    <h2>Sữa Chua Vị Kiwi</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp1">
+                        <button class="btn" onclick="addCart('sp1')">Đặt hàng</button>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <!--Sản phẩm 2-->
+            <section id="sp2">
+                <div>
+
+
+                    <img src="images/sanpham/blueberry.jpg" alt="Sữa chua kiwi" class="img-sptt">
+                    <h2>Sữa Chua Vị Xoài</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng: </label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp2">
+                        <button class="btn" onclick="addCart('sp2')">Đặt hàng</button>
+                    </div>
+
+ 
+
+                </div>
+            </section>
+            <!--Sản phẩm 3-->
+            <section id="sp3">
+                <div>
+
+
+                    <img src="images/sanpham/cantaloupe.jpg" alt="Sữa chua kiwi" class="img-sptt">
+                    <h2>Sữa Chua Vị Dâu</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp3">
+                        <button class="btn" onclick="addCart('sp3')">Đặt hàng</button>
+                    </div>
+
+
+
+                </div>
+        </div>
+        </section>
+        <h1>SẢN PHẨM MỚI</h1>
+
+        <div class="productNew">
+
+            <!--Sản phẩm 4-->
+            <section id="sp4">
+                <div>
+
+
+                    <img src="images/sanpham/grapes.jpg" alt="Sữa chua kiwi" class="img-sptt">
+                    <h2>Sữa Chua Vị Việt Quất</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp4">
+                        <button class="btn" onclick="addCart('sp4')">Đặt hàng</button>
+                    </div>
+                </div>
+            </section>
+            <!--Sản phẩm 5-->
+            <section id="sp5">
+                <div>
+
+
+                    <img src="images/sanpham/green-apple.jpg" alt="Sữa chua kiwi" class="img-sptt">
+                    <h2>Sữa Chua Vị Dưa lưới</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp5">
+                        <button class="btn" onclick="addCart('sp5')">Đặt hàng</button>
+                    </div>
+                </div>
+            </section>
+            <!--Sản phẩm 6-->
+            <section id="sp6">
+                <div>
+
+
+                    <img src="images/sanpham/kiwi.jpg" alt="Sữa chua kiwi" class="img-sptt">
+                    <h2>Sữa Chua Vị Dừa</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp6">
+                        <button class="btn" onclick="addCart('sp6')">Đặt hàng</button>
+                    </div>
+
+
+
+                </div>
+            </section>
+        </div>
+        <h1>SẢN PHẨM TRÁI CÂY MIỀN NHIỆT ĐỚI</h1>
+        <div class="product">
+            <!--Sản phẩm 7-->
+            <section>
+                <div id="sp7">
+
+
+                    <img src="images/sanpham/mango.jpg" alt="Sữa chua kiwi"
+                        class="img-sptt">
+                    <h2>Sữa Chua Vị Dứa</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp7">
+                        <button class="btn" onclick="addCart('sp7')">Đặt hàng</button>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <!--Sản phẩm 8-->
+            <section>
+                <div id="sp8">
+
+
+                    <img src="images/sanpham/pineapple.jpg" alt="Sữa chua kiwi"
+                        class="img-sptt">
+                    <h2>Sữa Chua Vị Cacao</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp8">
+                        <button class="btn" onclick="addCart('sp8')">Đặt hàng</button>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <section>
+                <div id="sp9">
+
+
+                    <img src="images/sanpham/strawberry.jpg" alt="Sữa chua kiwi"
+                        class="img-sptt">
+                    <h2>Sữa Chua Vị Cacao</h2>
+                    <p>Sữa chua trái cây là một loại tráng miệng ngon lành, bổ dưỡng mà hầu hết mọi người đều thích, kể
+                        cả người già và trẻ nhỏ. Nó không chỉ có hương vị thơm ngon, thanh mát với vị chua chua, béo
+                        ngậy của sữa chua, vị thơm mát của các loại trái cây mà giá trị dinh dưỡng của nó cực kì cao đối
+                        với sức khỏe.
+                        <a href="#">Xem chi tiết</a>
+                    </p>
+                    <div class="dathang-sptt">
+                        <label for="">Số Lượng:</label>
+                        <input type="number" max="100" min="0" value="0" size="3" id="qtysp9">
+                        <button  class="btn " onclick="addCart('sp9')">Đặt hàng</button>
+                    </div>
+
+
+
+                </div>
+            </section>
+        </div>
+
+    </article>
+
+
+
+
+
+    <footer id="footer">
+        <p>&copy 2021 Bản quyền thuộc về FreeezeVN
+            <a href=""><i class="fab fa-facebook-f fb-icon"></i></a>
+            <a href=""><i class="fab fa-twitter twitter-icon"></i></a>
+            <a href=""><i class="fab fa-pinterest pinter-icon"></i></a>
+            <a href="sanpham.html"><img src="images/top.png" width="50px"></a>
+        </p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        function addCart(code) {
+            //gán lại value cho input #qty...
+            document.getElementById('qty'+code).value = window.localStorage.getItem(code);
+       console.clear();
+       var qtyInput = document.querySelector('#qty' + code);
+       if (typeof localStorage[code] === "undefined") {
+           window.localStorage.setItem(code, parseInt(qtyInput.value))
+           console.log(code + ": số lượng " + window.localStorage.getItem(code));
+           return
+       }
+       if (parseInt(qtyInput.value) > 100) {
+           window.localStorage.setItem(code, 100)
+       }
+       else {
+           var current = parseInt(window.localStorage.getItem(code))
+           var number = parseInt(qtyInput.value)
+           window.localStorage.setItem(code, current+1) //mỗi lần click thì cộng 1
+       }
+       console.log(code + ": số lượng " + window.localStorage.getItem(code));
+   }
+    </script>
+</body>
+
+
+</html>

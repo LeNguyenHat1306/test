@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="font/fontawesome-free-5.15.4-web/css/all.css">
+    <title>Đơn Hàng</title>
+</head>
+<body>
+    <style>
+         #header {
+        grid-area: header-cell;
+        margin-bottom: 2px;
+        padding: 0 5px;
+        height: 100px;
+        background-image: url(images/header.png);
+    }
+        #header-img1 {
+        height: 80px;
+        position: absolute;
+        top: -5px;
+        animation: img1 3s;
+        animation-fill-mode: forwards;
+
+
+    }
+
+    @keyframes img1 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 30%;
+        }
+    }
+
+    #header-img2 {
+        height: 80px;
+        position: absolute;
+        top: -5px;
+        animation: img2 3s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes img2 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 45%;
+        }
+    }
+    #header-img3 {
+        height: 80px;
+        position: absolute;
+        top: 0;
+        animation: img3 3s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes img3 {
+        from {
+            left: 80%;
+        }
+
+        to {
+            left: 63%;
+        }
+    }
+    #nav ul  li{
+                
+                display: inline-block;
+            }
+            ul{
+                padding-left: 0px;
+            }
+            #logo-main{
+                width: 15%;
+            }
+    </style>
+    <div id="header">
+        <img src="images/logo.png">
+        <img id="header-img1" src="images/header-img1.png" alt="">
+        <img id="header-img2" src="images/header-img2.png" alt="">
+        <img id="header-img3" src="images/header-img3.png" alt="">
+        <nav id="nav">
+            <ul >
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Đăng nhập</a></li>
+                <li><a href="#">Đăng ký</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <div id="search">
+                    <input type="text" placeholder="Nhập nội dung cần tìm">
+                    <i class="fas fa-search icon-search"></i>
+                    <i class="fas fa-shopping-cart icon-cart"></i>
+                </div>
+            </ul>
+        </nav>
+       
+    </div>
+    <div id="chitiet">
+        <h1>CHI TIẾT ĐƠN HÀNG</h1>
+        <button class="btn" onclick="showCart();">CART FOOD</button>
+        <table id="tinhtien" >
+            <tr>
+                <th>Hình SP</th>
+                <th>Tên SP</th>
+                <th>Số lượng</th>
+                <th>Giá</th>
+                <th>Thành tiền</th>
+                <th></th>
+              </tr>
+              
+        </table>
+    </div>
+
+    <footer id="footer">
+        <p>&copy 2021 Bản quyền thuộc về FreeezeVN
+            <a href=""><i class="fab fa-facebook-f fb-icon"></i></a>
+            <a href=""><i class="fab fa-twitter twitter-icon"></i></a>
+            <a href=""><i class="fab fa-pinterest pinter-icon"></i></a>
+            <a href="sanpham.html"><img src="images/top.png" width="50px"></a> 
+        </p>
+        
+            
+    </footer>
+    <script type="text/javascript" src="js/main.js" ></script>
+    <script>
+       
+        var itemList = {
+       "sp1": {
+           "name": "Sữa chua vị kiwi",
+           "price": 20000,
+           "photo": "images/sanpham/strawberry.jpg"
+       },
+       "sp2": {
+           "name": "Sữa chua vị xoài",
+           "price": 32000,
+           "photo": "images/sanpham/blueberry.jpg"
+       },
+       "sp3": {
+           "name": "Sữa chua vị dâu",
+           "price": 30000,
+           "photo": "images/sanpham/cantaloupe.jpg"
+       },
+       "sp4": {
+           "name": "Sữa chua vị việt quất",
+           "price": 40000,
+           "photo": "images/sanpham/grapes.jpg"
+       },
+       "sp5": {
+           "name": "Sữa chua vị dưa lưới",
+           "price": 15000,
+           "photo": "images/sanpham/green-apple.jpg"
+       },
+       "sp6": {
+           "name": "Sữa chua vị dừa",
+           "price": 16000,
+           "photo": "images/sanpham/kiwi.jpg"
+       },
+       "sp7": {
+           "name": "Sữa chua vị dứa",
+           "price": 17000,
+           "photo": "images/sanpham/mango.jpg"
+       },
+       "sp8": {
+           "name": "Sữa chua vị cacao",
+           "price": 18000,
+           "photo": "images/sanpham/pineapple.jpg"
+       },
+       "sp9": {
+           "name": "Sữa chua vị cacao",
+           "price": 19000,
+           "photo": "images/sanpham/strawberry.jpg"
+       }
+   };
+   function getDiscountRate(){
+       var d = new Date();//lấy ngày hiện tại của máy tính 
+       var weekday=d.getDay();//lấy ngày trong tuần 
+       var totalMins=d.getHours()*60+d.getMinutes();//đổi thời gian hiện tại ra số phút tương đối trong ngày 
+       if(weekday>=1 && weekday<=3 && ((totalMins>=420 && totalMins<=660) || (totalMins>=780 && totalMins<=1020)))
+           return 0.1;
+    return 0;
+   }     
+   function showCart(){     
+       var Totalpt = 0 //Tổng Trước Thuế
+       var table = document.getElementById('tinhtien') //id la tinhtien
+       var start_row = 1
+       var formatter = new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'vnd' })
+       for(let key in itemList){
+           var item = itemList[key]
+           var orderDetails = window.localStorage.getItem(key)
+           if(orderDetails!=null){
+               var row = table.insertRow(start_row)
+               //hình
+               var cell = row.insertCell(0)
+               cell.innerHTML = "<div style='text-align:center'><img width='100px' src='"+item.photo+"' /></div>"
+               //Tên sản phẩm
+               cell = row.insertCell(1)
+               cell.innerHTML = item.name
+               //số lượng
+               cell = row.insertCell(2)
+               cell.classList.add('text-right')
+               cell.innerHTML = orderDetails
+               //giá 
+               cell = row.insertCell(3)
+               cell.classList.add('text-right')
+               cell.innerHTML = formatter.format(item.price)
+               //thành tiền
+               cell = row.insertCell(4)
+               cell.classList.add('text-right')
+               cell.innerHTML = formatter.format(item.price * orderDetails)
+               //nút xoá
+               cell = row.insertCell(5)
+               cell.innerHTML = "<i onclick='removeCart(\""+key+"\")' class='fas fa-trash-alt'></i>"
+              //  window.location.href= "donhang.html"; sẽ không xem được sản phẩm
+               //Tính tổng tiền
+               Totalpt += item.price * orderDetails
+               //Dòng mới
+               start_row++
+           }
+       }
+       //Hàng tổng tiền
+       var row = table.insertRow(start_row)
+       var cell = row.insertCell(0)
+       cell.colSpan = '6'
+       cell.classList.add('text-right')
+       cell.innerHTML = 'Tổng thành tiền (A) = '+formatter.format(Totalpt)
+       //xuống dòng
+       start_row++;
+       //Hàng chiết khấu
+       row = table.insertRow(start_row)
+       cell = row.insertCell(0)
+       cell.colSpan = '6'
+       cell.classList.add('text-right')
+       var totalWithDiscount = getDiscountRate() * Totalpt
+       cell.innerHTML = 'Chiết khấu (B = '+getDiscountRate()+ ' x A = ' + formatter.format(totalWithDiscount)
+       start_row++
+       //Hàng thuế
+       row = table.insertRow(start_row)
+       cell = row.insertCell(0)
+       cell.colSpan = '6'
+       cell.classList.add('text-right')
+       var totalTax = 0.1 * (Totalpt - totalWithDiscount)
+       cell.innerHTML = 'Thuế (C) = 10% x (A - B = ' + formatter.format(totalTax)
+       start_row++
+       //Hàng tổng đơn hàng
+       row = table.insertRow(start_row)
+       cell = row.insertCell(0)
+       cell.colSpan = '6'
+       cell.classList.add('text-right')
+       var total = Totalpt - totalWithDiscount + totalTax
+       cell.innerHTML = 'Tổng đơn hàng = A - B + C = ' + formatter.format(total)
+       start_row++
+       //Hàng xác nhận đơn hàng
+       row = table.insertRow(start_row)
+       cell = row.insertCell(0)
+       cell.colSpan = '6'
+       cell.innerHTML = '<button>Xác nhận đơn hàng </button>'
+     
+       
+   }
+   function removeCart(code){ 
+    if(typeof window.localStorage[code] !== "undefined"){
+        //xóa sản phẩm khỏi localStorage 
+        window.localStorage.removeItem(code);
+        window.location.href= "donhang.html";
+        //Xóa nội dung của phần thân của bảng (<tbody>)
+       // document.getElementById("orderDetails").getElementsByTagName('tbody')[0].innerHTML="";
+       document.getElementById("orderDetails").getElementsByTagNameNS('tbody')[0].innerHTML="";
+        //Hiển thị lại nội dung chi tiết của đơn hàng 
+        showCart();
+    }
+ }
+    </script>
+</body>
+</html>
